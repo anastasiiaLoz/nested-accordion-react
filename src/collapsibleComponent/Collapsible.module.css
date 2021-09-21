@@ -4,10 +4,9 @@
   cursor: pointer;
   font: unset;
   padding: 0.2rem;
-  margin-bottom: 0.5rem;
-  width: 100%;
+  margin: 0.3rem auto;
+  width: 80%;
   display: flex;
-  justify-content: flex-start;
   border-width: thin;
 }
 
@@ -27,6 +26,11 @@
   background-color: white;
   border-radius: 5px;
   padding: 7px;
+  width: 76%;
+  margin-left: 105px;
+  margin-top: 5px;
+  height: 200px;
+  overflow: scroll;
 }
 
 .icon {
