@@ -4,26 +4,29 @@ import styles from "../collapsibleComponent/Collapsible.module.css";
 import { data } from "../data.js";
 
 const Accordion = () => {
-  const getCountry = () => data.map(value => value.children);
+  // const continent = data.map(continent => continent.name);
+  // console.log(continent);
 
-  const getLang = () =>
-    data.map((value, key) => {
-      return value.children.map(lang => lang.children);
-    });
+  // const country = data.map(continent => continent.children.map(country => country.name));
+  // console.log(country);
 
+  // const lang = data.map((continent, key) => continent.children.map(country => country.children.map(lang => lang.name)));
+  // console.log(lang);
   return (
     <>
-      {data.map(value => (
-        <Collapsible label={value.name}>
-          {getCountry().map(country => (
-            <Collapsible label={country.name}>
-              <ul className={styles.background}>
-                {getLang().map(lang => (
-                  <li key={lang.name}> {lang.name}</li>
-                ))}
-              </ul>
-            </Collapsible>
-          ))}
+      {data.map(continent => (
+        <Collapsible label={continent.name}>
+          {data.map(continent =>
+            continent.children.map(country => (
+              <Collapsible label={country.name}>
+                <ul className={styles.background}>
+                  {data.map((continent, key) =>
+                    continent.children.map(country => country.children.map(lang => <li key={key}> {lang.name}</li>))
+                  )}
+                </ul>
+              </Collapsible>
+            ))
+          )}
         </Collapsible>
       ))}
     </>

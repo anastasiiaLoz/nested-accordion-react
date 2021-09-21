@@ -3,6 +3,7 @@ import styles from "../collapsibleComponent/Collapsible.module.css";
 import Chevron from "../collapsibleComponent/Chevron";
 
 function Collapsible(props) {
+  // console.log(props);
   const [isOpen, setIsOpen] = useState(false);
   const [setRotate, setRotateState] = useState(styles.icon);
   function toggle() {
